@@ -18,5 +18,14 @@ public class PrintJob implements Job {
         System.out.println("Current Time : " + LocalDateTime.now());
         System.out.println("Hello from Quartz!");
         System.out.println("================================");
+
+        /*
+        import org.quartz.JobDataMap;
+        JobDataMap data = context.getMergedJobDataMap();
+
+        System.out.println("Created By : " + data.getString("createdBy"));
+        System.out.println("Cron       : " + data.getString("cron"));
+
+        */
     }
 }
