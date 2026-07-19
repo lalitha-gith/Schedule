@@ -32,6 +32,20 @@ public class CreateSchedule {
         JobDetail job = JobBuilder.newJob(PrintJob.class)
                 .withIdentity("job-" + UUID.randomUUID())
                 .build();
+
+        /*
+
+        Using job data map
+
+        JobDetail job = JobBuilder.newJob(PrintJob.class)
+        .withIdentity("job1")
+        .usingJobData("createdBy", "Lalitha")
+        .usingJobData("cron", "0 5 * * * ?")
+        .build();
+
+        This cana also be used as a Job data Map which inturn can be used in PrintJob class using JobExecutionContext
+
+        */
         
         System.out.println(request.getCron().trim().replaceAll("\\s+", " "));
         Trigger trigger = TriggerBuilder.newTrigger()
